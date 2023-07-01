@@ -2,13 +2,15 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
   $(function () {
-  var input = document.querySelector('.description');
-  var bttn = document.querySelector('.saveBtn');
-  bttn.addEventListener('click', function() {
-   console.log("clicked");
-   console.log(document.textContent.input)
+   
+    const save = document.querySelectorAll('.saveBtn');
+     save.addEventListener('click', function() {
+     console.log("clicked");
+
 
   })
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
