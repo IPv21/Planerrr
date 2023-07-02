@@ -4,14 +4,9 @@
 const save = document.querySelectorAll('.saveBtn');
 $(function () {
   const save = document.querySelectorAll('.saveBtn');
-  const data = document.getElementById('.description');
+  const data = document.getElementById('description');
 
-  save.forEach(function (button) {
-    
-    button.addEventListener('click', function() {
-    localStorage.setItem("info", data.value );
-  })
-  })
+
 
   save.forEach(function (button) {
     button.addEventListener('click', function() {
@@ -19,6 +14,21 @@ $(function () {
     });
   });
 });
+
+$(document).ready(function () {
+  // this syntax will keep the function alert for any clicks that occur
+  $('.saveBtn').on('click', function () {
+    // once a specific saveBtn is clicked it will look for the sibling and parent related to that saveBtn to help produce the following variables of time and value
+    var value = $(this).siblings('.description').val();
+    var time = $(this).parent().attr('id');
+    console.log(value)
+    console.log(time)
+    localStorage.setItem(time, value)
+
+  });
+
+});
+
 
 
 
