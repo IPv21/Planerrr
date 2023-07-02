@@ -1,14 +1,14 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-  $(function () {
-   
-    const save = document.querySelectorAll('.saveBtn');
-     save.addEventListener('click', function() {
-     console.log("clicked");
-
-
-  })
+$(function () {
+  const save = document.querySelectorAll('.saveBtn');
+  save.forEach(function (button) {
+    button.addEventListener('click', function() {
+      console.log("clicked");
+    });
+  });
+});
 
 
   // TODO: Add a listener for click events on the save button. This code should
@@ -29,4 +29,4 @@
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+
