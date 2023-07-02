@@ -1,14 +1,41 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+const save = document.querySelectorAll('.saveBtn');
 $(function () {
   const save = document.querySelectorAll('.saveBtn');
+  const data = document.getElementById('.description');
+
+  save.forEach(function (button) {
+    
+    button.addEventListener('click', function() {
+    localStorage.setItem("info", data.value );
+  })
+  })
+
   save.forEach(function (button) {
     button.addEventListener('click', function() {
       console.log("clicked");
     });
   });
 });
+
+
+
+//  didn't work
+// function fun1() {
+//   console.log(data.value)
+// }
+// not even close
+// save.forEach.addEventListener('click', fun1 );
+// 
+// save.forEach(function () {
+//   save.addEventListener('click', function() {
+//     console.log(data.value);
+//   } )
+// })
+
+
 
 
   // TODO: Add a listener for click events on the save button. This code should
