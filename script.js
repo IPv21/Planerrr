@@ -25,9 +25,14 @@ $(document).ready(function () {
     console.log(time)
     localStorage.setItem(time, value)
 
+
   });
 
 });
+
+const dayJsObject = dayjs();
+console.log(dayJsObject.format("D/M/YYYY h:mm A"))
+
 
 
 
