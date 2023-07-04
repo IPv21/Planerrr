@@ -30,8 +30,11 @@ $(document).ready(function () {
 
 });
 
+
+
 const dayJsObject = dayjs();
-console.log(dayJsObject.format("D/M/YYYY h:mm A"))
+console.log(dayJsObject.format("D/M/YYYY h:mm A"));
+$('#currentDay').append(document.createTextNode(dayJsObject));
 
 
 
