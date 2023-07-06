@@ -30,8 +30,20 @@ $(document).ready(function () {
 
 });
 
-const dayJsObject = dayjs();
-console.log(dayJsObject.format("D/M/YYYY h:mm A"))
+
+
+var dayJsObject = dayjs();
+console.log(dayJsObject.format("D/M/YYYY h:mm A"));
+$('#currentDay').append(document.createTextNode(dayJsObject));
+var hour = dayJsObject.format('HH');
+console.log(hour);
+
+// cant convert value of "id" into an integer
+var ttt = Number('14');
+console.log(ttt);
+console.log(document.getElementById('14'));
+if (ttt == hour)document.getElementById('14').classList.add('present');
+
 
 
 
@@ -60,7 +72,7 @@ console.log(dayJsObject.format("D/M/YYYY h:mm A"))
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  // TODO: Add code to apply the past, present, or future class to each time
+  // TODO: Add code to apply the past, present, or future  to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
