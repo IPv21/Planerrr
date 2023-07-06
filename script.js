@@ -1,6 +1,5 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
+
 const save = document.querySelectorAll('.saveBtn');
 $(function () {
   const save = document.querySelectorAll('.saveBtn');
@@ -16,15 +15,12 @@ $(function () {
 });
 
 $(document).ready(function () {
-  // this syntax will keep the function alert for any clicks that occur
   $('.saveBtn').on('click', function () {
-    // once a specific saveBtn is clicked it will look for the sibling and parent related to that saveBtn to help produce the following variables of time and value
     var value = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
     console.log(value)
     console.log(time)
     localStorage.setItem(time, value)
-
 
   });
 
@@ -38,12 +34,30 @@ $('#currentDay').append(document.createTextNode(dayJsObject));
 var hour = dayJsObject.format('HH');
 console.log(hour);
 
-// cant convert value of "id" into an integer
-var ttt = Number('14');
-console.log(ttt);
-console.log(document.getElementById('14'));
-if (ttt == hour)document.getElementById('14').classList.add('present');
 
+// cant convert value of "id" into an integer
+// var ttt = Number('14');
+// console.log(ttt);
+// console.log(document.getElementById('14'));
+// if (ttt == hour)document.getElementById('14').classList.add('present');
+
+// if i can figure out hor to grab the value of the ids and convert it to an 
+// integer this will work
+
+// if ( "" < hour ) {
+//   $(this).addClass("past");
+//   $(this).removeClass("present");
+//   $(this).removeClass("future");
+// }
+// else if ( "" === hour ) {
+//   $(this).removeClass("past");
+//   $(this).addClass("present");
+//   $(this).removeClass("future");
+// }
+// else {
+//   $(this).removeClass("past");
+//   $(this).removeClass("present");
+//   $(this).addClass("future");
 
 
 
